@@ -98,12 +98,26 @@
   const next = document.querySelector('[data-review-next]');
   const step = () => cards[1].offsetLeft - cards[0].offsetLeft;
   const update = () => {
-    const index = Math.round(track.scrollLeft / step());
-    const visible = Math.round((track.clientWidth + 24) / step());
-    document.querySelector('[data-review-count]').textContent = `${index + 1}${visible > 1 ? '–' + Math.min(index + visible, cards.length) : ''} / ${cards.length}`;
-    track.style.height = `${Math.ceil(Math.max(...cards.slice(index, index + visible).map((card) => card.getBoundingClientRect().height)))}px`;
-    prev.disabled = track.scrollLeft < 2;
-    next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    // Read geometry together before updating labels or height.
+    const spacing = step();
+    const left = track.scrollLeft;
+    const width = track.clientWidth;
+    const totalWidth = track.scrollWidth;
+    const index = Math.round(left / spacing);
+    const visible = Math.round((width + 24) / spacing);
+    const height = `${Math.ceil(Math.max(...cards.slice(index, index + visible).map((card) => card.getBoundingClientRect().height)))}px`;
+    const count = `${index + 1}${visible > 1 ? '–' + Math.min(index + visible, cards.length) : ''} / ${cards.length}`;
+    const counter = document.querySelector('[data-review-count]');
+    if (counter.textContent !== count) counter.textContent = count;
+    if (track.style.height !== height) track.style.height = height;
+    prev.disabled = left < 2;
+    next.disabled = left + width >= totalWidth - 2;
+  };
+  let updateScheduled = false;
+  const requestUpdate = () => {
+    if (updateScheduled) return;
+    updateScheduled = true;
+    requestAnimationFrame(() => { updateScheduled = false; update(); });
   };
   const move = (direction) => track.scrollBy({ left: direction * step(), behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
   prev.addEventListener('click', () => move(-1)); next.addEventListener('click', () => move(1));
@@ -111,10 +125,10 @@
     if (event.target !== track || !['ArrowLeft','ArrowRight'].includes(event.key)) return;
     event.preventDefault(); move(event.key === 'ArrowLeft' ? -1 : 1);
   });
-  track.addEventListener('scroll', update, { passive: true });
-  new ResizeObserver(update).observe(track);
-  track.querySelectorAll('img').forEach((image) => image.addEventListener('load', update));
-  update();
+  track.addEventListener('scroll', requestUpdate, { passive: true });
+  new ResizeObserver(requestUpdate).observe(track);
+  track.querySelectorAll('img').forEach((image) => image.addEventListener('load', requestUpdate));
+  requestUpdate();
   const dialog = document.querySelector('.review-lightbox');
   document.querySelectorAll('.review-image').forEach((button) => button.addEventListener('click', () => {
     const card = button.closest('.review-card');
