@@ -101,6 +101,7 @@
     const index = Math.round(track.scrollLeft / step());
     const visible = Math.round((track.clientWidth + 24) / step());
     document.querySelector('[data-review-count]').textContent = `${index + 1}${visible > 1 ? '–' + Math.min(index + visible, cards.length) : ''} / ${cards.length}`;
+    track.style.height = `${Math.ceil(Math.max(...cards.slice(index, index + visible).map((card) => card.getBoundingClientRect().height)))}px`;
     prev.disabled = track.scrollLeft < 2;
     next.disabled = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
   };
@@ -111,7 +112,9 @@
     event.preventDefault(); move(event.key === 'ArrowLeft' ? -1 : 1);
   });
   track.addEventListener('scroll', update, { passive: true });
-  new ResizeObserver(update).observe(track); update();
+  new ResizeObserver(update).observe(track);
+  track.querySelectorAll('img').forEach((image) => image.addEventListener('load', update));
+  update();
   const dialog = document.querySelector('.review-lightbox');
   document.querySelectorAll('.review-image').forEach((button) => button.addEventListener('click', () => {
     const card = button.closest('.review-card');

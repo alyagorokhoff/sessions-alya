@@ -702,3 +702,6 @@ button:focus-visible,.reviews-track:focus-visible { outline:1px solid var(--cyan
 .review-lightbox.is-zoomed .review-lightbox__content figure { width:max-content; }
 .review-lightbox.is-zoomed .review-lightbox__content img { min-width:650px; max-width:none; }
 @media(max-width:799px) { .review-card h3 { min-height:0; } }
+
+.reviews-track { overflow-y:hidden; transition:height .25s ease; }
+@media(prefers-reduced-motion:reduce) { .reviews-track { transition:none; } }
