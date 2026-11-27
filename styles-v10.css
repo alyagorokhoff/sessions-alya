@@ -203,7 +203,7 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
 }
 
 .recognition {
-  padding: 3.6rem 0 4rem;
+  padding: 1.65rem 0 1.25rem;
   background: radial-gradient(circle at 88% 19%, rgba(184, 79, 133, .1), transparent 24rem);
 }
 .recognition__material {
@@ -303,7 +303,7 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
 .conclusion { margin: 0; color: #ded4da !important; }
 
 .presence {
-  padding: 3.9rem 0 4.5rem;
+  padding: 1.4rem 0 1rem;
   background:
     linear-gradient(180deg, rgba(10, 8, 16, .38), rgba(8, 7, 15, .55)),
     radial-gradient(circle at 10% 36%, rgba(55, 165, 176, .08), transparent 25rem);
@@ -365,7 +365,7 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
     radial-gradient(circle at 91% 19%, rgba(169, 72, 130, .08), transparent 26rem),
     linear-gradient(180deg, rgba(7, 6, 13, .36), rgba(11, 7, 16, .75));
 }
-.stories__heading { margin-top: 3.6rem; margin-bottom: 1.35rem; }
+.stories__heading { margin-top: .65rem; margin-bottom: 1.35rem; }
 .stories__heading h2 {
   max-width: 100%;
   white-space: nowrap;
@@ -451,7 +451,7 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
 
 .invitation {
   position: relative;
-  padding: 3.7rem 0 4.3rem;
+  padding: 1.1875rem 0 4.3rem;
   border-top: 1px solid rgba(226, 205, 218, .13);
 }
 .invitation::before {
@@ -577,17 +577,17 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
   :root { --shell: min(1060px, calc(100% - 80px)); }
   .hero__content { width: min(78%, 940px); }
   .hero__title { font-size: clamp(6rem, 12vw, 10rem); }
-  .recognition { padding: 4.8rem 0 5.2rem; }
+  .recognition { padding: 2.65rem 0 1.75rem; }
   .recognition__grid { grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr); column-gap: 5vw; }
   .section-heading { grid-column: 1 / -1; }
   .recognition__copy { grid-column: 1; }
   .message-life { grid-column: 2; align-self: center; }
   .recognition__after { grid-column: 2; }
-  .presence { padding: 5rem 0 5.8rem; }
+  .presence { padding: 1.9rem 0 1.5rem; }
   .presence__grid { grid-template-columns: minmax(0, .86fr) minmax(0, 1.14fr); column-gap: 7vw; }
   .presence .section-heading { grid-column: 1 / -1; }
   .presence__copy { grid-column: 2; }
-  .stories__heading { margin-top: 4.7rem; margin-bottom: 2rem; }
+  .stories__heading { margin-top: 1.15rem; margin-bottom: 2rem; }
   .story__grid { grid-template-columns: minmax(220px, .62fr) minmax(360px, 1.38fr); gap: 5.5vw; padding: 2.7rem 0 3.1rem; }
   .story__grid--reverse .story__trace { grid-column: 2; }
   .story__grid--reverse .story__message { grid-row: 1; grid-column: 1; }
@@ -602,7 +602,7 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
   .section-heading { padding-bottom: 1.05rem; }
   .section-heading h2 { font-size: clamp(1.42rem, 6.6vw, 2.3rem); line-height: 1.06; }
   .recognition .section-heading h2 { font-size: clamp(1.3rem, 6.2vw, 1.62rem); letter-spacing: -.012em; }
-  .recognition { padding: 3.05rem 0 3.6rem; }
+  .recognition { padding: 1.65rem 0 1.25rem; }
   .recognition__material { top: 8rem; right: -54%; width: 116%; height: 24rem; }
   .recognition__grid { gap: 1.2rem; }
   .recognition__copy { padding-top: .25rem; }
@@ -612,7 +612,7 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
   .recognition blockquote { padding-left: .85rem; }
   .gold-line { max-width: 20ch; }
   .recognition__after { padding-top: .15rem; }
-  .presence { padding: 3.4rem 0 4rem; }
+  .presence { padding: 1.4rem 0 1rem; }
   .presence__grid { gap: 1.25rem; }
   .presence__copy { width: 100%; max-width: none; margin-left: 0; padding: .25rem 0 0; }
   .presence__copy > p,
@@ -621,7 +621,7 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
   .presence__copy > p:nth-child(4) { max-width: 100%; margin-left: 0 !important; }
   .presence__principles { padding-left: .85rem; border-left: 1px solid rgba(87, 190, 195, .48); }
   .statement--last { max-width: 18ch !important; margin-left: 0 !important; }
-  .stories__heading { margin-top: 3.2rem; margin-bottom: 1.35rem; }
+  .stories__heading { margin-top: .65rem; margin-bottom: 1.35rem; }
   .stories__heading h2 { font-size: clamp(1.4rem, 6.6vw, 1.72rem); }
   .story__grid { padding: 1.65rem 0 2rem; gap: .95rem; }
   .story__material { right: -58%; width: 124%; height: 76%; }
@@ -635,7 +635,7 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
   .story__message--realization img { border-radius: 1.55rem .62rem 1.3rem .66rem; }
   .story__message--state { border-radius: .85rem 1.9rem 1.45rem .9rem; }
   .story__message--state img { border-radius: .62rem 1.65rem 1.2rem .66rem; }
-  .invitation { padding: 3.3rem 0 3.9rem; }
+  .invitation { padding: 1.1875rem 0 3.9rem; }
   .contact-choice__links { grid-template-columns: 1fr; }
 }
 
@@ -665,7 +665,7 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
 .voice-player__timeline:focus-within { outline:1px solid var(--cyan); outline-offset:5px; border-radius:3px; }
 .voice-player__time { display:flex; justify-content:space-between; color:var(--muted); font-size:.68rem; font-variant-numeric:tabular-nums; padding-top:7px; }
 .voice-review__error:empty { display:none; }.voice-review__error { font-size:.75rem; color:var(--sun); margin:1rem 0 0; }
-.reviews-collection { padding-bottom:2.5rem; }
+.reviews-collection { padding-bottom:1.25rem; }
 .reviews-nav { display:flex; justify-content:space-between; align-items:center; gap:.5rem; margin-bottom:1.4rem; color:var(--muted); font-size:.75rem; }
 .reviews-nav>div { display:flex; align-items:center; gap:.8rem; white-space:nowrap; }
 .reviews-nav button { width:38px; height:38px; border-radius:50%; font-size:1.1rem; }
@@ -703,3 +703,9 @@ button:focus-visible,.reviews-track:focus-visible { outline:1px solid var(--cyan
 
 .reviews-track { overflow-y:hidden; transition:height .25s ease; }
 @media(prefers-reduced-motion:reduce) { .reviews-track { transition:none; } }
+
+/* Boundary spacing: collection padding + invitation border + invitation padding. */
+@media (min-width: 780px) {
+  .reviews-collection { padding-bottom: 1.75rem; }
+  .invitation { padding-top: 1.6875rem; }
+}
