@@ -230,8 +230,7 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
   line-height: 1.56;
 }
 .recognition__copy .lead { max-width: 28ch; color: var(--white); font-size: clamp(1.18rem, 4.9vw, 1.42rem); font-weight: 400; line-height: 1.46; }
-.recognition__copy > p:nth-child(2) { max-width: 30ch; margin-left: 7%; color: #d4cbd3; }
-.recognition__copy > p:nth-child(4) { max-width: 35ch; margin-left: 3%; }
+.recognition__copy > .recognition__feeling { max-width: 30ch; margin-left: 7%; color: #d4cbd3; }
 .recognition blockquote {
   position: relative;
   max-width: 19ch;
@@ -607,8 +606,7 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
   .recognition__material { top: 8rem; right: -54%; width: 116%; height: 24rem; }
   .recognition__grid { gap: 1.2rem; }
   .recognition__copy { padding-top: .25rem; }
-  .recognition__copy > p:nth-child(2),
-  .recognition__copy > p:nth-child(4),
+  .recognition__copy > .recognition__feeling,
   .recognition blockquote,
   .gold-line { max-width: 100%; margin-left: 0 !important; }
   .recognition blockquote { padding-left: .85rem; }
