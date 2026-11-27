@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <defs>
+    <linearGradient id="refraction" x1="27" y1="27" x2="101" y2="102" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#57bec3"/>
+      <stop offset=".36" stop-color="#c5c9e7"/>
+      <stop offset=".64" stop-color="#8b5aa0"/>
+      <stop offset="1" stop-color="#b65784"/>
+    </linearGradient>
+    <radialGradient id="inner">
+      <stop stop-color="#8b5aa0" stop-opacity=".24"/>
+      <stop offset=".55" stop-color="#57bec3" stop-opacity=".08"/>
+      <stop offset="1" stop-color="#080710" stop-opacity="0"/>
+    </radialGradient>
+    <filter id="halo" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+  </defs>
+  <path fill="#080710" d="M0 0h128v128H0z"/>
+  <g transform="rotate(32 64 64)">
+    <ellipse cx="64" cy="64" rx="28" ry="44" fill="url(#inner)"/>
+    <ellipse cx="64" cy="64" rx="28" ry="44" fill="none" stroke="url(#refraction)" stroke-width="8" opacity=".24" filter="url(#halo)"/>
+    <ellipse cx="64" cy="64" rx="28" ry="44" fill="none" stroke="url(#refraction)" stroke-width="6.5"/>
+  </g>
+</svg>
