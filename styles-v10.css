@@ -610,7 +610,6 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
   .recognition blockquote,
   .gold-line { max-width: 100%; margin-left: 0 !important; }
   .recognition blockquote { padding-left: .85rem; }
-  .gold-line { max-width: 20ch; }
   .recognition__after { padding-top: .15rem; }
   .presence { padding: 1.4rem 0 1rem; }
   .presence__grid { gap: 1.25rem; }
@@ -620,7 +619,6 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
   .presence__principles,
   .presence__copy > p:nth-child(4) { max-width: 100%; margin-left: 0 !important; }
   .presence__principles { padding-left: .85rem; border-left: 1px solid rgba(87, 190, 195, .48); }
-  .statement--last { max-width: 18ch !important; margin-left: 0 !important; }
   .stories__heading { margin-top: .65rem; margin-bottom: 1.35rem; }
   .stories__heading h2 { font-size: clamp(1.4rem, 6.6vw, 1.72rem); }
   .story__grid { padding: 1.65rem 0 2rem; gap: .95rem; }
@@ -648,7 +646,7 @@ h1, h2, p, blockquote, a { overflow-wrap: break-word; }
 /* Client stories: scoped additions, preserving the original chapters. */
 .voice-review { position:relative; margin:2.2rem 0 0; padding:1.5rem; border:1px solid var(--line); border-radius:1rem 2.5rem 1rem 2rem; background:radial-gradient(ellipse at 0 100%, #57bec30c, transparent 65%),radial-gradient(ellipse at 100% 0,#8b5aa017,transparent 65%),#0e091680; }
 .voice-review--featured { max-width:820px; margin:0 auto 2.8rem; padding:clamp(1.4rem,4vw,2.5rem); }
-.voice-review__label { color:var(--muted); font-size:.67rem; letter-spacing:.12em; text-transform:uppercase; margin-bottom:1rem; }
+.voice-review__label { color:var(--muted); font-size:.67rem; letter-spacing:normal; text-transform:none; margin-bottom:1rem; }
 .voice-review h3 { font-family:var(--font-display); font-weight:400; font-size:clamp(1.25rem,3.4vw,1.8rem); line-height:1.35; color:var(--white); margin:0 0 .9rem; }
 .voice-review--featured h3 { font-size:clamp(1.45rem,4vw,2.3rem); max-width:28ch; }
 .voice-review__quote { font-size:.9rem; color:var(--muted); line-height:1.7; margin-bottom:1.5rem; }
@@ -708,4 +706,22 @@ button:focus-visible,.reviews-track:focus-visible { outline:1px solid var(--cyan
 @media (min-width: 780px) {
   .reviews-collection { padding-bottom: 1.75rem; }
   .invitation { padding-top: 1.6875rem; }
+}
+
+/* Let mobile copy use its existing container; retain desktop asymmetry. */
+@media (max-width: 779px) {
+  .recognition__copy, .presence__copy, .recognition__after {
+    width: 100%;
+    max-width: none;
+    margin-left: 0;
+  }
+  .recognition__copy > p, .recognition__copy > blockquote,
+  .presence__copy > p, .recognition__after > .conclusion {
+    width: 100%;
+    max-width: none !important;
+    margin-left: 0 !important;
+    text-wrap: pretty;
+  }
+  .recognition__copy > blockquote, .recognition__copy > .gold-line,
+  .presence__copy > .statement--last { text-wrap: balance; }
 }
